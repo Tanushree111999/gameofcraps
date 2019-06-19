@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html>
+<head>
+
+<style>
+body
+{
+	background-image:url(" game.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+} 
+
+</style>
+
+<title>Game of Craps</title>
+
+<script type="text/javascript">
+	window.alert("Welcome to Game of Crapes!!");
+var roll1 = 0;
+var count=0;
+var roll2 = 0;
+var sumOfDice = 0;
+
+
+var roll1 = Math.floor(Math.random()*6+1);
+var roll2 = Math.floor(Math.random()*6+1); 
+count++;
+sumOfDice = roll1 + roll2;
+
+document.write("<h4>Outcome of first die is "+ roll1+ ".</h4>");
+document.write("<h4> Outcome of second die is "+ roll2 + ".</h4>");
+document.write("<h4> Sum of  dies is "+ sumOfDice + ".</h4>");
+
+
+
+       if(sumOfDice==7 || sumOfDice==11) 
+                document.writeln("<h4>It is a come-out roll.You won the game!!!!</h4>");
+       else if(sumOfDice==2 ||sumOfDice==3||sumOfDice==12)
+                document.writeln("<h4>It is a come-out roll.You lost!! Better luck next time.</h4>");
+        else {
+	document.writeln("<h4>It is a make point roll.</h4>");
+ 	 var point = sumOfDice;
+	while(1) {
+                    var roll1 = Math.floor(Math.random()*6+1);
+                    var roll2 = Math.floor(Math.random()*6+1); 
+	count++;
+	document.write("<h4> Outcome of first die is "+ roll1+ ".</h4>");
+	document.write("<h4> Outcome of second die is "+ roll2 + ".</h4>");
+                    sumOfDice = roll1+roll2;
+	document.write("<h4> Sum of  dies is "+ sumOfDice + ".</h4>");
+	
+                    if (sumOfDice == 7 || sumOfDice==11){
+                        document.writeln("<h4>You lost!!Better luck next time.</h4>");
+                        break;
+                    }
+                    else if (point == sumOfDice) {
+                        document.writeln("<h4>You won the game!!</h4>");
+                             break;   
+
+	        
+                }
+             
+
+        }
+	document.writeln("<h4>Total number of throws is "+count+"</h4>");
+	
+    }
+
+
+
+</script>
+</head>
+<body >
+</body>
+</html>
